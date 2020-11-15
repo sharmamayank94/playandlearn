@@ -1,5 +1,5 @@
 body{
-	background-image: linear-gradient(90deg,rgb(240, 240, 255), white, white, rgb(240, 240, 255));
+	font-family: monospace;
 	margin: 0px;
 }
 .navbar{
@@ -16,7 +16,16 @@ body{
 	font-family: monospace;
 }
 
-
+.racecourse
+{
+	margin:280px;
+	display: grid;
+	margin-top: 80px;
+	margin-bottom: 0px;
+	grid-row-gap: 70px;
+	grid-template-columns: 10% 80% 10%;
+	
+}
 .poscontainer{
 	margin-top: 120px;
 }
@@ -25,10 +34,18 @@ body{
 }
 .position{
 	
-	height: 5px;
-	width: 80%;
-	margin: auto;
+	height: 5px;	
 	background-color: rgb(200, 200, 200);
+}
+.finalpositioncontainer{
+	font-family: monospace;
+	font-size: 24px;
+	margin-left: 20px;
+}
+.finalposition{
+	display: inline;
+	position: relative;
+	top: -25px;
 }
 .points{
 	background-color: orange;
@@ -42,18 +59,28 @@ body{
 	top: -30px;
 	width: 100px;
 }
+.playername{
+	font-family: monospace;
+	font-size: 24px;
+	margin-left: 20px;
+}
+.playername p{
+	display: inline;
+	position: relative;
+	top: -25px;
+	
+}
 .questioncontainer{
 	margin: 40px;
 	display: flex;
 }
 .question{
 	margin: auto;
-	font-size: 50px;
-	
+	font-size: 50px;	
 }
 
 .container{
-	margin: 80px;
+	
 }
 .container input{
 	display: block;
