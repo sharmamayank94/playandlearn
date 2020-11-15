@@ -1,0 +1,59 @@
+body{
+	background-color: aliceblue;
+}
+.navbar{
+	display: flex;
+	color: grey;
+	justify-content: center;
+	background-color: white;
+	box-shadow: 4px 4px 4px;
+}
+
+.navbutton{
+	font-size: 20px;
+	padding: 20px;
+	font-family: monospace;
+}
+.poscontainer{
+	margin-top: 120px;
+}
+.position{
+	
+	height: 5px;
+	width: 80%;
+	margin: auto;
+	background-color: rgb(200, 200, 200);
+}
+.points{
+	background-color: orange;
+	text-align: right;
+	height: 100%;
+	width: 0%;
+	transition-duration: 0.5s;
+}
+.points img{
+	position: relative;
+	top: -30px;
+	width: 100px;
+}
+.questioncontainer{
+	margin: 40px;
+	display: flex;
+}
+.question{
+	margin: auto;
+	font-size: 50px;
+	
+}
+
+.container{
+	margin: 80px;
+}
+.container input{
+	display: block;
+	margin: auto;
+	font-size: 30px;
+	border-radius: 10px;
+	padding: 10px;
+	border-color: green;
+}
