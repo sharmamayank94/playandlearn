@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+		<link rel = "stylesheet" href = "./public/styles/home.css">
+		<title>
+			Playandlearn
+		</title>
+	</head>
+	<body>
+		<%-include('partials/navbar.ejs', {tab:tab}); %>
+		
+		<div class="header">
+			<div class="image">
+				<img src = "/public/logo.png">
+			</div>
+			<div class="quote">
+				<p>Learning while playing.</p>	
+			</div>
+			
+		</div>
+
+		<div class="content">
+			<div class="game">
+				<div class="text">
+					<a href = "/calculaterace">Enter a Number race</a>		
+				</div>
+				<div class="image">
+
+					<img src = "/public/images/car2.png">	
+				</div>
+				
+			</div>
+
+			<div class="game">
+				<div class="text">
+					<a href = "/calculaterace">Enter a Number race</a>		
+				</div>
+				<div class="image">
+					
+					<img src = "/public/images/car2.png">	
+				</div>
+				
+			</div>
+			
+		</div>
+
+		
+	</body>
+</html>
