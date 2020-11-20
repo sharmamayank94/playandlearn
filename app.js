@@ -15,8 +15,13 @@ app.get("/calculaterace", (req, res)=>{
 });
 
 app.get("/gridandfun", (req, res)=>{
-	res.render("gridandfun", {tab: "gridandfun"});
+	let rown = req.query.rows||3;
+	let coln = req.query.cols||3;
+	console.log(req.query.rows, req.query.cols);
+	res.render("gridandfun", {tab: "gridandfun", rown: rown, coln: coln});
 })
+
+
 
 app.listen(3000, (a,b)=>{
 	console.log("Server is running on port 3000");

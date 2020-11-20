@@ -10,129 +10,76 @@
 	<body>
 		<%-include('partials/navbar.ejs', {tab:tab}); %>
 
-		<div class="grid">
+		<div class="pagecontainer">
 			
-
-			<div class="row">
-				
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark">3</span>
-				</label>  
-  				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-			</div>
-
-			<div class="row">
-				
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-  				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-			</div>
-
-			<div class="row">
-				
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-  				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-			</div>
-			<div class="row">
-				
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-  				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark">6</span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-			</div>
-
-			<div class="row">
-				
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-  				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-				<label for="rc11">
-					<input type = "checkbox" id = "rc11">
-					<span class = "checkmark"></span>
-				</label>  
-			</div>
-				
 		
+			<div class="sidebar">
+				<br/>
+				<div class = "sidebarheading">Enter a value between: 3-10</div>
+				<div class="lab">
+					Rows:	
+				</div>
+				 <input type = "text" id = "rowsinput" value = <%= rown%>><br/><br/><br/>
+				 <div class="lab">
+					Columns:
+				</div>
+				 <input type = "text" id = "colsinput" value = <%= coln%>>
+
+				 <div class="newgame">
+				 	<button class = "newgamebutton" onclick = "startgame()">Start!</button>
+				 </div>
+			</div>
+
+
+			<div class="gamecontainer">		
+				
+				<div class="answer">
+					Your score: <span class = "userscorespan">0</span>
+					Target: <span class = "answerspan"></span>
+				</div>
+
+				<div class="grid">
+					<% for(var i = 0; i<rown; i++){ %>
+
+					<div class="row">
+						
+						<% for(var j = 0; j<coln; j++){ %>
+						<%var val =Math.ceil(Math.random() * 10)%9 + 1 %>
+
+						<label for="<%=i%><%=j%>">
+							<input type = "checkbox" id = "<%=i%><%=j%>" onclick="score(this, <%=val%>, <%=i%>, <%=j%>)" disabled>
+							<span class = "checkmark" id = "h<%=i%><%=j%>">
+								<%= val%>
+							</span>
+						</label>  
+		  				
+		  				<%}%>
+					
+					</div>
+
+
+					<%}%>		
+				
+				</div>
+
+				<div class="controlbutton">
+					<button class = "resetbutton" onclick="reset()">Reset</button>
+					<button class = "howtoplaybutton" onclick="howtoplay()">How to play</button>
+				</div>
+
+				<div class="result">
+					
+				</div>
+			</div>
+
+			<div class="scorebar">
+				
+			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+		var rown = JSON.stringify(<%=rown%>);
+		var coln = JSON.stringify(<%=coln%>);
+	</script>
+	<script src = "/public/scripts/numbermaze.js"></script>
 </html>
