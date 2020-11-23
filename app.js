@@ -23,6 +23,6 @@ app.get("/gridandfun", (req, res)=>{
 
 
 
-app.listen(3000, (a,b)=>{
+app.listen(process.env.PORT|| 3000, (a,b)=>{
 	console.log("Server is running on port 3000");
 });
