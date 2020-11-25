@@ -12,46 +12,6 @@
   margin-bottom: 20px;
 }
 
-.sidebar{
-  
-
-  position: relative;
-  background-color: rgb(240, 240, 240);
-  height: 100vh;
-  padding-top: 40px;
-  border-right: 1px solid rgb(230, 230, 230);
-}
-.sidebarheading
-{
-  font-size: 16px;
-  text-align: center;
-  color: rgb(30, 150, 20);
-  margin: 0px 0px 20px 0px;
-}
-
-.lab
-{
-  font-size: 20px;
-  margin-left: 10px;
-  width: 90px;
-  display: inline-block;
-}
-
-.newgame
-{
-  margin-top: 20px;
-  text-align: center;
-}
-.newgamebutton
-{
-  border: 1px solid green;
-  margin: 10px;
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-  background-image: linear-gradient(rgb(24, 202, 39), rgb(30, 219, 87));
-}
 .gridcontainer
 {
   display: inline-block;

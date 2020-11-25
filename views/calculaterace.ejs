@@ -3,76 +3,103 @@
 <head>
 	<link rel = "stylesheet" href = "/public/styles/home.css">
 	<link rel = "stylesheet" href = "/public/styles/calculaterace.css">
+	<link rel = "stylesheet" href = "/public/styles/sidebar.css">
 	<title>
 		Race
 	</title>
 </head>
 <body>
 	<%-include('partials/navbar.ejs', {tab:'race'}); %>
-	<div class="racecourse">
-		
-			<div class="playername">
-				<p>You</p>
-			</div>
-			<div class="position">
-				<div class="points">
-					<img src = "public/images/car3.png">
-				</div>
-			</div>
-			<div class="finalpositioncontainer">
-				<p class="finalposition">
-				
-				</p>	
-			</div>
-			
-			<div class="playername">
-				<p>Bot 1</p>
-			</div>
-		
-			<div class="position">
-				<div class="points">
-					<img src = "public/images/car2.png">
-				</div>
-			</div>
 
-			<div class="finalpositioncontainer">
-				<p class="finalposition">
+	<div class="gamecontainer">
+		<div class="sidebar">
+			<div class="slidecontainer">
+				<label>Bot level:</label><br/><br/> <input type="range" min="2" max="8" value="<%=botlev%>" class="slider" id="botslider"><br/>
 				
-				</p>	
 			</div>
-
-			<div class="playername">
-				<p>Bot 2</p>
-			</div>
-			<div class="position">
-				<div class="points">
-					<img src = "public/images/car.png">
-				</div>
-			</div>
-			<div class="finalpositioncontainer">
-				<p class="finalposition">
-				
-				</p>	
-			</div>
-		
-	</div>
+			<br/>
+			<input type = "checkbox" value = "mul" id = "mul" class = "opsec"> <label for="mul">Multiplication</label><br/>
+			<input type = "checkbox" value = "div" id = "div"  class = "opsec"> <label for="div">Division</label><br/>
+			<input type = "checkbox" value = "sub" id = "sub" class = "opsec"> <label for = "sub">Subtraction</label><br/>
+			<input type = "checkbox" value = "add" id = "add" class = "opsec"> <label for="add">Addition</label><br/>
 	
-
-
-
-	<div class="questioncontainer">
-		<div class="question">
-			<button onclick = "startGame()" style = "color:white; background-color: green; padding: 20px; font-size: 25px; border-radius: 10px"> Start Game! </button>
+			 <div class="newgame">
+			 	<button class = "newgamebutton" onclick = "startgame()">Start!</button>
+			 </div>
 		</div>
-	</div>
+		<div class="racecontainer">
+			<div class="racecourse">
+				
+				<div class="playername" >
+					<p>You</p>
+				</div>
+				<div class="position" >
+					<div class="points">
+						<img src = "/public/images/car3.png">
+					</div>
+				</div>
+				<div class="finalpositioncontainer">
+					<p class="finalposition">
+					
+					</p>	
+				</div>
+				
+				<div class="playername">
+					<p>Bot 1</p>
+				</div>
+			
+				<div class="position">
+					<div class="points">
+						<img src = "/public/images/car2.png">
+					</div>
+				</div>
 
-	<div class="container">
-		<input type = "text" id = "answer">
-	</div>
+				<div class="finalpositioncontainer">
+					<p class="finalposition">
+					
+					</p>	
+				</div>
 
-	<div class="result">
+				<div class="playername">
+					<p>Bot 2</p>
+				</div>
+				<div class="position">
+					<div class="points">
+						<img src = "/public/images/car.png">
+					</div>
+				</div>
+				<div class="finalpositioncontainer">
+					<p class="finalposition">
+					
+					</p>	
+				</div>
+			
+			</div>
+			<div class="questioncontainer">
+				<div class="question">
+					<button onclick = "startGame()" style = "color:white; background-image: linear-gradient(rgb(24, 202, 39), rgb(30, 219, 87)); padding: 15px; font-size: 22px; border-radius: 10px; border-color: green"> Start Game! </button>
+				</div>
+			</div>
+
+			<div class="container">
+				<input type = "text" id = "answer">
+			</div>
+
+			<div class="result">
+				
+			</div>
+		
+		</div>
+
+
+
 		
 	</div>
+			
 </body>
+<script>
+	var botlev = JSON.stringify(<%=botlev%>);
+	var operatorlist2 = <%-JSON.stringify(operatorlist2)%>;
+</script>
 <script type="text/javascript" src = "/public/scripts/race.js"></script>
 </html>

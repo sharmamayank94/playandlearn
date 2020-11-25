@@ -11,13 +11,18 @@ app.get('/', (req, res)=>{
 });
 
 app.get("/calculaterace", (req, res)=>{
-	res.render("calculaterace", {tab: "race"});
+	console.log(req.query.operators);
+	var botlev = req.query.botlevel || 5;
+	var operatorlist = req.query.operators||"add,mul,sub,div";
+	operatorlist = operatorlist.split(",");
+	console.log(typeof(operatorlist));
+	res.render("calculaterace", {tab: "race", botlev:botlev, operatorlist2:operatorlist});
 });
 
 app.get("/gridandfun", (req, res)=>{
 	let rown = req.query.rows||3;
 	let coln = req.query.cols||3;
-	console.log(req.query.rows, req.query.cols);
+	
 	res.render("gridandfun", {tab: "gridandfun", rown: rown, coln: coln});
 })
 

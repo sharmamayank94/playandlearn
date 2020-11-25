@@ -191,10 +191,11 @@ function reset()
 		
 		for(var j = 0; j<parseInt(coln); j++)
 		{
-			var box = document.getElementById(""+i+j);
-			box.checked = false;
+			
+			deactivateElement(i, j)
 		}
 	}
+	activateChilds(-1, 0);
 }
 
 function howtoplay()
