@@ -2,6 +2,9 @@ body{
 	font-family: monospace;
 	margin: 0px;
 }
+svg{
+	height: 500px;
+}
 .navbar{
 	position: relative;
 	z-index: 2;
@@ -55,28 +58,22 @@ body{
 .header{
 	position: relative;
 	z-index: -1;
-	padding: 30px;
+	
 	/*background-color: moccasin;*/
-	background-color: lightskyblue;
+	background-color: aliceblue;
 	
 	align-content: center;
 	justify-content: space-around;
 	display: flex;
 	/*box-shadow: 4px 4px 10px grey;*/
 }
-.header div{
-	
-}
-.header img{
-	height: 200px;
+.header{
 
-	
+	max-width: 1600px;
+	overflow: hidden;
 }
 
-.header p{
-	font-size: 60px;
-	font-family:  Sofia, impact, charcoal;
-}
+
 
 .content{
 	padding: 40px;
@@ -101,7 +98,7 @@ body{
 .game img{
 	display: inline;
 	
-	height: 40px;
+	height: 50px;
 }
 .content a{
 
