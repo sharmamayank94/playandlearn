@@ -3,16 +3,26 @@ body{
 	margin: 0px;
 }
 svg{
-	height: 500px;
+	max-width: 100%;
+	height: auto;
 }
-.navbar{
+.logo{
+	height: 30px;
+	display: inline-block;
+}
+
+.navcontainer{
+	
 	position: relative;
 	z-index: 2;
 	display: flex;
-	justify-content: left;
+	align-items: space-around;
+	justify-content: space-between;
 	background-color: white;
 	box-shadow: 1px 1px 4px grey;
-
+}
+.navbar{
+	
 }
 .navbar img{
 	height: 40px;
@@ -21,10 +31,19 @@ svg{
 	margin-left: 10px;
 	margin-right: 100px;
 }
+
+.loginbutton
+{
+	
+	font-size: 20px;
+	padding: 15px 0px;
+	display: inline-block;
+	font-family: monospace;
+}
 .navbutton{
 	font-size: 20px;
 	padding: 15px 0px;
-
+	display: inline-block;
 	font-family: monospace;
 	/*background-image: linear-gradient(rgb(50, 50, 255), navy);*/
 }
@@ -56,15 +75,13 @@ svg{
 }
 
 .header{
-	position: relative;
-	z-index: -1;
+	
 	
 	/*background-color: moccasin;*/
 	background-color: aliceblue;
 	
-	align-content: center;
-	justify-content: space-around;
-	display: flex;
+	
+	
 	/*box-shadow: 4px 4px 10px grey;*/
 }
 .header{
