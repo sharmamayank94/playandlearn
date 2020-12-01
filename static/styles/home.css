@@ -79,12 +79,12 @@ svg{
 	display: block;
 	text-decoration: none;
 	padding: 10px 30px;
-	font-size: 20px;
+	font-size: 16px;
 	border-bottom: 1px solid grey;
 }
 .drop-option a:hover{
-	background-color: orange;
-	color: white;
+	
+	color: grey;
 }
 .navbutton{
 	font-size: 20px;
