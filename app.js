@@ -1,21 +1,51 @@
 var express = require('express');
 var ejs = require('ejs');
-
+var cookieSession = require('cookie-session')
 var app = express();
 
 app.set('view engine', 'ejs');
 app.use('/public', express.static('static'));
 
-app.get('/', (req, res)=>{
-	res.render("home", {tab: "home"});
+let k = 1
+
+
+app.use(cookieSession({
+	name: "session",
+	keys: ['key1', 'key2']
+
+}));
+
+
+const checker = (req, res, next)=>{
+	if(req.session.userId)
+	{
+
+		next();	
+	} 
+	else
+	{
+		req.session.userId = k;	
+		k++;
+		next();
+	}
+		
+}
+
+
+
+app.get('/', checker, (req, res)=>{
+	
+	res.render("home", {tab: "home", loggedIn: true, username: "mayank"});
+
 });
 
 app.get("/calculaterace", (req, res)=>{
-	console.log(req.query.operators);
+	
+	
 	var botlev = req.query.botlevel || 5;
 	var operatorlist = req.query.operators||"add,mul,sub,div";
 	operatorlist = operatorlist.split(",");
-	console.log(typeof(operatorlist));
+	
 	res.render("calculaterace", {tab: "race", botlev:botlev, operatorlist2:operatorlist});
 });
 

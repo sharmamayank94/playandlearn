@@ -32,13 +32,59 @@ svg{
 	margin-right: 100px;
 }
 
-.loginbutton
+.logincontainer{
+
+
+}
+.userbutton
 {
+	margin-right: 10px;
+	font-size: 18px;
 	
-	font-size: 20px;
-	padding: 15px 0px;
+	padding: 10px 0px;	
+	
 	display: inline-block;
 	font-family: monospace;
+}
+
+.userbutton .user-an{
+	text-decoration: none;
+	display: inline-block;
+	border: 1px solid orange;
+	border-radius: 5px;
+	padding: 5px 10px;
+	color: orange;
+}
+
+
+.username
+{
+	padding: 15px 10px;
+}
+
+.drop-option
+{
+	display: none;
+	position: absolute;
+	z-index: 4;
+	overflow: hidden;
+	background-color: white;
+	
+}
+
+.usercontainer:hover .drop-option{
+	display: block;
+}
+.drop-option a{
+	display: block;
+	text-decoration: none;
+	padding: 10px 30px;
+	font-size: 20px;
+	border-bottom: 1px solid grey;
+}
+.drop-option a:hover{
+	background-color: orange;
+	color: white;
 }
 .navbutton{
 	font-size: 20px;

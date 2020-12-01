@@ -42,8 +42,30 @@
 	
 
 </div>
-<div class = "loginbutton">
-		<a href = ""> Login</a>
-	</div>
+<div class = "logincontainer">
+	
+	<% if(!loggedIn){ %>
+		<div class = "userbutton">
+			<a href = "/login" class = "user-an"> Login </a>
+		</div>
+		<div class = "userbutton">
+			<a href = "/register" class = "user-an"> Register </a>
+		</div>
+	<%} else{ %>
 
+		<div class = "usercontainer">
+			
+				<div class = "userbutton username">Hello, <%=username%> 
+				<i class="fa fa-caret-down"></i>
+				</div>
+				<div class = "drop-option">
+					<a href = "/users/<%=username%>" > Profile </a>
+					<a href = "/logout"> Logout </a>
+				</div>
+				
+		
+		</div>
+
+	<% } %>
+</div>
 </div>
