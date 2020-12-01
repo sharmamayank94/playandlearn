@@ -32,7 +32,7 @@ svg{
 	margin-right: 100px;
 }
 
-.logincontainer{
+.usercontainer{
 
 
 }
@@ -78,13 +78,14 @@ svg{
 .drop-option a{
 	display: block;
 	text-decoration: none;
-	padding: 10px 30px;
+	padding: 10px 60px 10px 30px;
 	font-size: 16px;
+	color: black;
 	border-bottom: 1px solid grey;
 }
 .drop-option a:hover{
 	
-	color: grey;
+	background-color: rgb(240, 240, 240);
 }
 .navbutton{
 	font-size: 20px;
