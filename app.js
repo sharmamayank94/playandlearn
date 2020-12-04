@@ -177,6 +177,9 @@ app.post("/users/register", (req, res)=>{
 	
 });
 
+app.get("/users/:param", (req, res)=>{
+	console.log("hi this is parameter"+req.params.param);
+})
 
 app.get('/logout', (req, res)=>{
 	req.session = null;
