@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name = "view" content = "width=device-width, initial-scale=1.0">
+
+		<link rel = "stylesheet" href = "/public/styles/login.css">
+		<title> Playandlearn - Login</title>
+	</head>
+	<body>
+		
+		<div class="logincontainer">
+			<div class="backhome">
+				<a href = "/"><img src = "/public/images/assets/close.png"></a>
+			</div>
+			<div class="logincomponent">
+				<img src = "/public/logo2.svg">
+			</div>
+			<div class="logincomponent logindetails">
+				<p class = "head">Join Us</p>
+				<p class="content">
+					Already a member? <a href = "/users/login">Log In</a>
+				</p>
+				<form method = "POST" action = "/users/register">
+					<label>
+						<div class="lab labemail">Email </div>
+						<input type = "text" class = "txt" 
+						name = "email"
+						onfocus = "shifthead('labemail')" 
+						onblur = "shiftdownhead('labemail', 'email')">
+					</label>
+					
+					<br/><br/>
+					<label>
+						<div class="lab labuser">Username </div>
+						<input type = "text" class = "txt" 
+						name = "username"
+						onfocus = "shifthead('labuser')" 
+						onblur = "shiftdownhead('labuser', 'username')">
+					</label>
+					<br/><br/>
+					<label>
+						<div class="lab labpwd"> Password </div>
+						<input type = "password" class = "txt" 
+						name = "password"
+						onfocus = "shifthead('labpwd')" 
+						onblur = "shiftdownhead('labpwd', 'password')" >
+					</label>
+					<br/><br/>
+					<label>
+						<div class="lab labconpwd"> Confirm Password </div>
+						<input type = "password" class = "txt" 
+						name = "confirmpassword"
+						onfocus = "shifthead('labconpwd')" 
+						onblur = "shiftdownhead('labconpwd', 'confirmpassword')" >
+					</label>
+					
+					<div class="message">
+						<%=message%>
+					</div>
+					<input type = "submit" class = "submitbutton" value = "REGISTER">
+				</form>
+			</div>
+		</div>
+	</body>
+	<script src="/public/scripts/login.js"></script>
+</html>

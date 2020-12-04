@@ -1,0 +1,111 @@
+body{
+	margin: 0px;
+	height: 100vh;
+	background-image: radial-gradient( rgb(100, 120, 130) 10%, rgb(20, 20, 20));
+}
+.logincontainer{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	min-height: 70vh;
+	transform: translate(-50%, -50%);
+	align-content: center;
+	display: grid;
+	background-color: white;
+	grid-template-columns: auto auto;
+}
+.backhome{
+	position: absolute;
+	top:5%;
+	right: 5%;
+}
+
+.backhome img{
+	width: 20px;
+}
+
+.logincomponent{
+	padding: 50px;
+}
+.logincomponent img{
+	width: 200px;
+}
+
+.head{
+	color: black;
+	font-size: 28px;
+	font-weight: 700;
+	font-family: 'Trebuchet MS', sans-serif;
+	margin: 0px;
+}
+.content{
+
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 14px;
+	
+}
+.logindetails .txt{
+	border: none;
+	height: 40px;
+	font-size: 20px;
+	border-bottom: 1px solid black;
+	transition: border .35s ease-in-out;
+
+}
+.logindetails .txt:focus{
+	border-bottom: 1px solid rgb(50, 250, 190) ;
+	outline: none;
+
+	height: 40px;
+	font-size: 20px;
+	
+}
+
+.lab{
+	
+	position: relative;
+
+	font-family: verdana;
+	color:black ;
+}
+.labuser{
+	font-size: 16px;
+	transition-duration: 0.3s;
+	top: 30px;
+}
+.labpwd{
+	font-size: 16px;
+	transition-duration: 0.3s;
+	top: 30px;
+}
+.labconpwd{
+	font-size: 16px;
+	transition-duration: 0.3s;
+	top: 30px;
+}
+.labemail{
+	font-size: 16px;
+	transition-duration: 0.3s;
+	top: 30px;
+}
+
+.message{
+	color: red;
+	margin: 10px;
+}
+
+.submitbutton
+{
+	margin: 10px 0px;
+	border: none;
+	font-family: sans-serif;
+	padding: 15px 20px;
+	font-size: 15px;
+	font-weight: 750;
+	color : black;
+	background-image: 
+	linear-gradient(45deg, rgb(50, 250, 190) 50%, 
+		  rgb(80, 240, 180) 55%);
+
+	
+}
