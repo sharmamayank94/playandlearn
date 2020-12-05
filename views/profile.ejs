@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel = "stylesheet" href = "/public/styles/home.css">
+		<link rel = "stylesheet" href = "/public/styles/profile.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>
+			Playandlearn
+		</title>
+	</head>
+	<body>
+		<%-include('partials/navbar.ejs', {tab:"none", loggedIn:loggedIn, username: username}); %>
+		
+		<div class="profilecontainer">
+			<div class="details">
+				<div class="name">
+					<%=username%><br/>
+				</div>
+				<div class="joinedon">
+					Member since: <%=joinedon.toLocaleString()%>
+				</div>
+				<div class="attrcontainer">
+					<img src = "/public/images/coins.png"> <%=points%>
+					<img src = "/public/images/fire.png"> <%=streak%> days
+				</div>
+				<div class="name">
+					Races : <%=racecount%>
+
+				</div>
+			
+				<div class="bullet">
+
+					
+
+					<ul>
+						<li> Races won: <%=wincount%></li>
+						<li> Average speed: <%=avgspeed%> seconds per equation </li>
+					
+				</div>
+				<div class="bullet">
+					
+				</div>
+			</div>
+
+			
+		</div>
+		
+		
+		
+	</body>
+</html>

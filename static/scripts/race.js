@@ -70,7 +70,7 @@ function startgame()
 	{
 		if(item.checked) operators.push(item.value);
 	}	
-	console.log(operators);
+	
 	window.location = "/calculaterace/?"+"botlevel="+slider.value+"&operators="+operators;
 }
 
@@ -122,7 +122,18 @@ inp.addEventListener('input', ()=>{
 			finalPosition[0].innerHTML = rank + "<sup>"+posscript[rank-1]+"</sup> position" ;			
 			rank++;
 			inputContainer.style.display = "none";
-			question.innerHTML = Math.ceil((endTime-startTime)/1000) + " seconds";
+			let timetaken = Math.ceil((endTime-startTime)/1000);
+			question.innerHTML =  timetaken + " seconds";
+			let winner = 0;
+			if(rank-1==1) winner = 1;
+			var stats = {timetaken, winner};
+			fetch("/racestats", {
+				method: "POST",
+				body: JSON.stringify(stats),
+				headers: new Headers({
+					'Content-type': 'application/json'
+				})
+			});
 		} 
 		else
 		{
