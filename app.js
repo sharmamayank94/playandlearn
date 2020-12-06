@@ -185,6 +185,7 @@ app.post("/users/register", (req, res)=>{
 	}
 	else
 	{
+		res.send(process.env.DATABASE_URL);
 		bcrypt.hash(req.body.password, 3, (err, hash) => {
 			knex.select('email').from("userdetails")
 			.where('email', '=', req.body.email)
