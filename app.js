@@ -222,18 +222,18 @@ app.post("/users/register", (req, res)=>{
 			  				res.redirect('/');
 		  				})
 		  				.catch(err=>{
-		  					console.log(err);
+		  					res.send("p1"+err);
 		  				});
 
 		  				
 		  			})
 		  			.catch(err=>{
-		  				console.log(err);
+		  				res.send("p2"+err);
 		  			});
 
 
 				}
-			});
+			}).catch(res.send("p3"+err));
   			
 		});
 	}
