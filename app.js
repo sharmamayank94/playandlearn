@@ -233,7 +233,9 @@ app.post("/users/register", (req, res)=>{
 
 
 				}
-			}).catch(res.send("p3"+err));
+			}).catch(err=>{
+				res.send("p3"+err);
+			});
   			
 		});
 	}
