@@ -5,14 +5,25 @@ var bodyParser = require('body-parser');
 var knexjs = require('knex')
 var bcrypt = require('bcrypt');
 
+
+
+// var knex = knexjs({
+//   client: 'pg',
+ 
+//   connection: {
+//     host : '127.0.0.1',
+//     user : 'postgres',
+//     password : 'test',
+//     database : 'playandlearn'
+//   }
+// });
+
 var knex = knexjs({
   client: 'pg',
  
-  connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'test',
-    database : 'playandlearn'
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
   }
 });
 
